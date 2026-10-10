@@ -8,7 +8,17 @@
     "url": "https://taptax.co.uk"
   },
   "homepage": "https://taptax.co.uk/integrations/claude",
+  "privacyPolicyUrl": "https://taptax.co.uk/privacy",
   "repository": "https://github.com/udohsolomon/taptax-mcp",
   "license": "MIT",
-  "keywords": ["tax", "uk", "making-tax-digital", "hmrc", "self-employed", "invoices", "bookkeeping", "mcp"]
+  "keywords": [
+    "tax",
+    "uk",
+    "making-tax-digital",
+    "hmrc",
+    "self-employed",
+    "invoices",
+    "bookkeeping",
+    "mcp"
+  ]
 }
