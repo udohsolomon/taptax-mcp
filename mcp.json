@@ -1,0 +1,7 @@
+{
+  "mcpServers": {
+    "taptax": {
+      "url": "https://api.taptax.co.uk/mcp"
+    }
+  }
+}

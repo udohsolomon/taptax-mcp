@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="TapTax">
+  <!-- Ripple Tie: concentric tap-ripple rings + solid centre dot, one continuous knotted line -->
+  <path d="M 41 53.25 A 24 24 0 1 0 23 53.25 C 30 51.5 35 45 39 43.12 A 14 14 0 1 0 25 43.12 C 29 45 34 51.5 41 53.25 Z"
+        stroke="#650D85" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="32" cy="31" r="4.5" fill="#650D85"/>
+</svg>

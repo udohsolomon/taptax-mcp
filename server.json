@@ -1,0 +1,27 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "uk.co.taptax/taptax",
+  "title": "TapTax",
+  "description": "UK tax: take-home pay, self-employed and company tax, VAT, stamp duty, invoices and MTD.",
+  "version": "1.1.1",
+  "websiteUrl": "https://taptax.co.uk/integrations/claude",
+  "repository": {
+    "url": "https://github.com/udohsolomon/taptax-mcp",
+    "source": "github"
+  },
+  "icons": [
+    {
+      "src": "https://taptax.co.uk/icon-maskable.svg",
+      "mimeType": "image/svg+xml",
+      "sizes": [
+        "any"
+      ]
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.taptax.co.uk/mcp"
+    }
+  ]
+}
