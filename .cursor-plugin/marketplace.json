@@ -1,0 +1,18 @@
+{
+  "name": "taptax",
+  "owner": {
+    "name": "TapTax",
+    "email": "support@taptax.co.uk"
+  },
+  "metadata": {
+    "description": "TapTax plugins for Cursor.",
+    "version": "1.1.0"
+  },
+  "plugins": [
+    {
+      "name": "taptax",
+      "source": "./",
+      "description": "Making Tax Digital for UK sole traders and landlords: ask about your tax, log receipts and mileage, create and send invoices, and get your quarterly HMRC update ready, plus 37 UK tax calculators that need no account. Filing stays one tap in TapTax."
+    }
+  ]
+}

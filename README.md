@@ -136,7 +136,7 @@ Estimates are not tax advice.
 | --- | --- |
 | `server.json` | The Official MCP Registry entry |
 | `.claude-plugin/` | Claude Code plugin manifest and marketplace |
-| `.cursor-plugin/plugin.json` | Cursor plugin manifest |
+| `.cursor-plugin/` | Cursor plugin manifest and marketplace |
 | `.mcp.json`, `mcp.json` | The remote server for Claude Code and Cursor |
 | `skills/taptax/SKILL.md` | Guidance the assistant loads with the plugin |
 | `glama.json` | Glama ownership claim |
