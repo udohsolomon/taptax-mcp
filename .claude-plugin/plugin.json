@@ -1,5 +1,6 @@
 {
   "name": "taptax",
+  "displayName": "TapTax",
   "version": "1.1.0",
   "description": "Making Tax Digital for UK sole traders and landlords: ask about your tax, log receipts and mileage, create and send invoices, and get your quarterly HMRC update ready, plus 37 UK tax calculators that need no account. Filing stays one tap in TapTax.",
   "author": {
@@ -8,7 +9,10 @@
     "url": "https://taptax.co.uk"
   },
   "homepage": "https://taptax.co.uk/integrations/claude",
+  "documentationUrl": "https://taptax.co.uk/integrations/claude",
+  "supportUrl": "https://taptax.co.uk/integrations/claude#faq",
   "privacyPolicyUrl": "https://taptax.co.uk/privacy",
+  "termsOfServiceUrl": "https://taptax.co.uk/terms",
   "repository": "https://github.com/udohsolomon/taptax-mcp",
   "license": "MIT",
   "keywords": [
