@@ -1,4 +1,4 @@
-<p align="center"><img src="assets/logo.svg" width="72" alt="TapTax"></p>
+![TapTax](assets/logo.svg)
 
 # TapTax MCP server
 
@@ -7,8 +7,9 @@ This repository holds the public connection details for the TapTax MCP server, p
 The server itself is hosted by TapTax; there is nothing to install or run.
 
 - **Server URL:** `https://api.taptax.co.uk/mcp` (Streamable HTTP)
+- **Claude connector:** [TapTax in the Claude directory](https://claude.ai/directory/taptax)
 - **Registry name:** `uk.co.taptax/taptax` on the [Official MCP Registry](https://registry.modelcontextprotocol.io/v0/servers?search=uk.co.taptax/taptax)
-- **Auth:** none for the 37 public tools; OAuth 2.1 (PKCE, client ID metadata documents or dynamic client registration) for the 11 tools that act on your own TapTax account
+- **Auth:** none for the 37 public tools; OAuth 2.1 (PKCE, client ID metadata documents or dynamic client registration) for the 12 tools that act on your own TapTax account (11 the assistant can call, plus the Send button on the invoice card)
 - **Docs:** [taptax.co.uk/integrations/claude](https://taptax.co.uk/integrations/claude) and [taptax.co.uk/integrations/chatgpt](https://taptax.co.uk/integrations/chatgpt)
 
 Ask in plain English: how much tax you owe so far this year, which transactions still need reviewing, log this receipt, invoice a client, or get your quarterly update ready.
@@ -18,7 +19,8 @@ The 37 public tools work with no account: the tax estimate, PAYE tax code checke
 
 ### Claude
 
-Add **TapTax** from the [Claude connector directory](https://claude.ai/directory/connectors/taptax), or add a custom connector with the server URL above.
+Connect **TapTax** from the [Claude directory](https://claude.ai/directory/taptax) in Claude on the web, desktop and mobile, or add a custom connector with the server URL above.
+The plugin in this repository uses the same server URL, so if you have both you see one set of TapTax tools, not two.
 
 ### Claude Code
 
@@ -39,7 +41,7 @@ Then run `/mcp`, choose **taptax** and **Authenticate** to use your own records.
 
 ### Cursor
 
-Install the TapTax plugin from the Cursor Marketplace, or add the server to `~/.cursor/mcp.json`:
+Add the TapTax plugin from [cursor.directory](https://cursor.directory/plugins/taptax), or add the server to `~/.cursor/mcp.json`:
 
 ```json
 {
@@ -64,61 +66,66 @@ The account tools answer an unauthenticated call with HTTP 401 and a `WWW-Authen
 
 ### Public (no account)
 
-| Tool | What it does |
-| --- | --- |
-| `estimate_self_employed_tax` | Estimate self-employed tax |
-| `check_tax_code` | Check a PAYE tax code |
-| `check_mtd_status` | Check if Making Tax Digital applies |
-| `get_mtd_deadlines` | Making Tax Digital deadlines |
-| `calculate_take_home_pay` | Calculate take-home pay |
-| `calculate_gross_salary_for_take_home` | Work out the salary for a take-home figure |
-| `calculate_salary_sacrifice` | Calculate salary sacrifice savings |
-| `calculate_pro_rata_salary` | Calculate a pro rata salary |
-| `convert_hourly_rate_to_salary` | Convert an hourly rate to a salary |
-| `convert_salary_to_hourly_rate` | Convert a salary to an hourly rate |
-| `calculate_student_loan_repayment` | Calculate student loan repayments |
-| `calculate_child_benefit_charge` | Calculate the High Income Child Benefit Charge |
-| `calculate_tax_on_multiple_incomes` | Calculate tax on several incomes |
-| `calculate_pension_tax_relief` | Calculate pension tax relief |
-| `calculate_dividend_tax` | Calculate dividend tax |
-| `compare_salary_and_dividends` | Compare salary and dividends |
-| `compare_limited_company_and_sole_trader` | Compare a limited company and sole trader |
-| `calculate_corporation_tax` | Calculate corporation tax |
-| `calculate_contractor_day_rate` | Calculate contractor day rate income |
-| `compare_inside_and_outside_ir35` | Compare inside and outside IR35 |
-| `calculate_cis_deduction` | Calculate a CIS deduction |
-| `plan_quarterly_tax_set_aside` | Plan how much tax to set aside |
-| `calculate_mileage_allowance` | Calculate the mileage allowance |
-| `estimate_self_assessment_penalties` | Estimate Self Assessment penalties |
-| `calculate_vat` | Add or remove VAT |
-| `check_vat_registration` | Check VAT registration and the Flat Rate Scheme |
-| `check_vat_reverse_charge` | Check the construction VAT reverse charge |
-| `calculate_markup` | Calculate a price from a markup |
-| `calculate_profit_margin` | Calculate a profit margin |
-| `calculate_invoice_due_date` | Calculate an invoice due date |
-| `calculate_late_payment_interest` | Calculate late payment interest on an invoice |
-| `calculate_capital_gains_tax` | Calculate Capital Gains Tax |
-| `calculate_rental_income_tax` | Calculate tax on rental income |
-| `calculate_savings_interest_tax` | Calculate tax on savings interest |
-| `calculate_stamp_duty` | Calculate Stamp Duty |
-| `prepare_business_document` | Prepare an invoice, quote or receipt to download |
-| `generate_invoice_numbers` | Generate invoice numbers |
+| Tool                                      | What it does                                     |
+| ----------------------------------------- | ------------------------------------------------ |
+| `estimate_self_employed_tax`              | Estimate self-employed tax                       |
+| `check_tax_code`                          | Check a PAYE tax code                            |
+| `check_mtd_status`                        | Check if Making Tax Digital applies              |
+| `get_mtd_deadlines`                       | Making Tax Digital deadlines                     |
+| `calculate_take_home_pay`                 | Calculate take-home pay                          |
+| `calculate_gross_salary_for_take_home`    | Work out the salary for a take-home figure       |
+| `calculate_salary_sacrifice`              | Calculate salary sacrifice savings               |
+| `calculate_pro_rata_salary`               | Calculate a pro rata salary                      |
+| `convert_hourly_rate_to_salary`           | Convert an hourly rate to a salary               |
+| `convert_salary_to_hourly_rate`           | Convert a salary to an hourly rate               |
+| `calculate_student_loan_repayment`        | Calculate student loan repayments                |
+| `calculate_child_benefit_charge`          | Calculate the High Income Child Benefit Charge   |
+| `calculate_tax_on_multiple_incomes`       | Calculate tax on several incomes                 |
+| `calculate_pension_tax_relief`            | Calculate pension tax relief                     |
+| `calculate_dividend_tax`                  | Calculate dividend tax                           |
+| `compare_salary_and_dividends`            | Compare salary and dividends                     |
+| `compare_limited_company_and_sole_trader` | Compare a limited company and sole trader        |
+| `calculate_corporation_tax`               | Calculate corporation tax                        |
+| `calculate_contractor_day_rate`           | Calculate contractor day rate income             |
+| `compare_inside_and_outside_ir35`         | Compare inside and outside IR35                  |
+| `calculate_cis_deduction`                 | Calculate a CIS deduction                        |
+| `plan_quarterly_tax_set_aside`            | Plan how much tax to set aside                   |
+| `calculate_mileage_allowance`             | Calculate the mileage allowance                  |
+| `estimate_self_assessment_penalties`      | Estimate Self Assessment penalties               |
+| `calculate_vat`                           | Add or remove VAT                                |
+| `check_vat_registration`                  | Check VAT registration and the Flat Rate Scheme  |
+| `check_vat_reverse_charge`                | Check the construction VAT reverse charge        |
+| `calculate_markup`                        | Calculate a price from a markup                  |
+| `calculate_profit_margin`                 | Calculate a profit margin                        |
+| `calculate_invoice_due_date`              | Calculate an invoice due date                    |
+| `calculate_late_payment_interest`         | Calculate late payment interest on an invoice    |
+| `calculate_capital_gains_tax`             | Calculate Capital Gains Tax                      |
+| `calculate_rental_income_tax`             | Calculate tax on rental income                   |
+| `calculate_savings_interest_tax`          | Calculate tax on savings interest                |
+| `calculate_stamp_duty`                    | Calculate Stamp Duty                             |
+| `prepare_business_document`               | Prepare an invoice, quote or receipt to download |
+| `generate_invoice_numbers`                | Generate invoice numbers                         |
 
 ### Your TapTax account
 
-| Tool | What it does | Access |
-| --- | --- | --- |
-| `get_tax_position` | Get my tax position | read |
-| `list_transactions` | List my transactions | read |
-| `get_mileage_summary` | Get my mileage | read |
-| `add_transaction` | Add income or an expense | read and change |
-| `update_transaction` | Update or review a transaction | read and change |
-| `log_mileage_trip` | Log a business trip | read and change |
-| `list_invoices` | List my invoices | read |
-| `create_invoice` | Create an invoice | read and change |
-| `send_invoice` | Show an invoice ready to send | read and change |
-| `mark_invoice_paid` | Mark an invoice paid | read and change |
-| `prepare_quarterly_update` | Prepare my quarterly update | read |
+| Tool                       | What it does                       | Access          |
+| -------------------------- | ---------------------------------- | --------------- |
+| `get_tax_position`         | Get my tax position                | read            |
+| `list_transactions`        | List my transactions               | read            |
+| `get_mileage_summary`      | Get my mileage                     | read            |
+| `add_transaction`          | Add income or an expense           | read and change |
+| `update_transaction`       | Update or review a transaction     | read and change |
+| `log_mileage_trip`         | Log a business trip                | read and change |
+| `list_invoices`            | List my invoices                   | read            |
+| `create_invoice`           | Create an invoice                  | read and change |
+| `send_invoice`             | Show an invoice ready to send      | read and change |
+| `mark_invoice_paid`        | Mark an invoice paid               | read and change |
+| `prepare_quarterly_update` | Prepare my quarterly update        | read            |
+| `send_invoice_from_card`   | Send the invoice shown on the card | read and change |
+
+`send_invoice_from_card` is the Send button on the card that `send_invoice` shows.
+It is hidden from the assistant, so only your own press of Send can call it.
+Each card's button works once, within 15 minutes, and only while the invoice still matches what the card showed.
 
 You sign in on taptax.co.uk and choose read-only or read-and-change access, and you can disconnect at any time in TapTax Settings > Connected apps.
 
@@ -130,16 +137,31 @@ You sign in on taptax.co.uk and choose read-only or read-and-change access, and 
 
 Estimates are not tax advice.
 
+## What the plugin contains and what it sends
+
+The Claude Code plugin has two parts, and no code runs on your machine:
+
+- **A skill** (`skills/taptax/SKILL.md`): plain-text guidance that tells the assistant how to use the TapTax tools well.
+- **A remote MCP server reference** (`.mcp.json`): the HTTPS address of the TapTax server.
+
+It has no hooks, commands, agents, scripts or local servers, and it installs no packages.
+
+When the assistant calls a TapTax tool, the tool's inputs go over HTTPS to `api.taptax.co.uk`, the server TapTax runs, and nowhere else.
+The public tools need no account, and their inputs are the figures you ask about, such as a salary or a property price.
+The account tools work only after you sign in on taptax.co.uk, and they read or change your own TapTax records: transactions, mileage, invoices and your quarterly figures.
+An invoice is emailed to your client only when you press Send on the invoice card.
+TapTax handles this data under its [privacy policy](https://taptax.co.uk/privacy).
+
 ## What is in this repository
 
-| Path | Purpose |
-| --- | --- |
-| `server.json` | The Official MCP Registry entry |
-| `.claude-plugin/` | Claude Code plugin manifest and marketplace |
-| `.cursor-plugin/` | Cursor plugin manifest and marketplace |
-| `.mcp.json`, `mcp.json` | The remote server for Claude Code and Cursor |
+| Path                     | Purpose                                      |
+| ------------------------ | -------------------------------------------- |
+| `server.json`            | The Official MCP Registry entry              |
+| `.claude-plugin/`        | Claude Code plugin manifest and marketplace  |
+| `.cursor-plugin/`        | Cursor plugin manifest and marketplace       |
+| `.mcp.json`, `mcp.json`  | The remote server for Claude Code and Cursor |
 | `skills/taptax/SKILL.md` | Guidance the assistant loads with the plugin |
-| `glama.json` | Glama ownership claim |
+| `glama.json`             | Glama ownership claim                        |
 
 ## Support and privacy
 
